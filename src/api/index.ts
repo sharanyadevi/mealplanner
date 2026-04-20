@@ -14,11 +14,7 @@ async function getRequest<T>(params: Record<string, string>): Promise<T> {
 async function postRequest(params: Record<string, string>): Promise<void> {
   const url = new URL(BASE_URL);
   Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
-  await fetch(url.toString(), {
-    method: 'POST',
-    mode: 'no-cors',
-    redirect: 'follow',
-  });
+  await fetch(url.toString(), { redirect: 'follow' });
 }
 
 export async function fetchWeeklyPlan(): Promise<DayPlan[]> {
