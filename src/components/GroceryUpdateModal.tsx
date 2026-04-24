@@ -43,7 +43,7 @@ export default function GroceryUpdateModal({ item, onClose, onSaved }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm">
       <div
-        className="w-full max-w-lg bg-white rounded-t-2xl shadow-2xl p-6 pb-10 animate-slide-up"
+        className="w-full max-w-lg bg-white rounded-t-2xl shadow-2xl p-6 pb-24 animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">

@@ -91,6 +91,7 @@ export default function HomeScreen() {
       [date]: { ...prev[date], date, [mealType]: dish },
     }));
     setModal(null);
+    load();
   }
 
   if (loading) return <LoadingSpinner message="Loading meal plan…" />;

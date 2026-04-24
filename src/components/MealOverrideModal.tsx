@@ -29,7 +29,7 @@ export default function MealOverrideModal({ date, mealType, currentDish, onClose
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const formatted = new Date(date).toLocaleDateString('en-IN', {
+  const formatted = new Date(date + 'T00:00:00').toLocaleDateString('en-IN', {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
@@ -42,8 +42,8 @@ export default function MealOverrideModal({ date, mealType, currentDish, onClose
     try {
       await overrideMeal(date, mealType, dish.trim());
       onSaved(dish.trim());
-    } catch {
-      setError('Failed to save. Please try again.');
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to save. Please try again.');
     } finally {
       setSaving(false);
     }
@@ -52,7 +52,7 @@ export default function MealOverrideModal({ date, mealType, currentDish, onClose
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm">
       <div
-        className="w-full max-w-lg bg-white rounded-t-2xl shadow-2xl p-6 pb-10 animate-slide-up"
+        className="w-full max-w-lg bg-white rounded-t-2xl shadow-2xl p-6 pb-24 animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-4">
