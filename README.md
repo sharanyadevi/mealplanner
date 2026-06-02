@@ -139,6 +139,29 @@ src/
 
 ---
 
+## 🛣️ Roadmap
+
+### Near Term
+
+- [ ] Dark mode support
+- [ ] Export grocery list to PDF
+- [ ] Improved dish search and filtering
+- [ ] Recurring meal templates
+
+### Mid Term
+
+- [ ] Nutrition tracking
+- [ ] Recipe import support
+- [ ] Multi-week planning
+
+### Long Term
+
+- [ ] Family meal sharing
+- [ ] Mobile application
+- [ ] AI-assisted meal suggestions
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a PR.
