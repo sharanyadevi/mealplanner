@@ -42,6 +42,8 @@ interface ModalState {
   currentDish: string;
 }
 
+const days = generateNext14Days();
+
 export default function HomeScreen() {
   const [plan, setPlan] = useState<Record<string, DayPlan>>({});
   const [loading, setLoading] = useState(true);
@@ -49,7 +51,6 @@ export default function HomeScreen() {
   const [modal, setModal] = useState<ModalState | null>(null);
   const [expandedDays, setExpandedDays] = useState<Set<string>>(new Set());
 
-  const days = generateNext14Days();
   const today = days[0];
 
   const load = useCallback(async () => {
@@ -75,7 +76,11 @@ export default function HomeScreen() {
   function toggleDay(date: string) {
     setExpandedDays((prev) => {
       const next = new Set(prev);
-      next.has(date) ? next.delete(date) : next.add(date);
+      if (next.has(date)) {
+        next.delete(date);
+      } else {
+        next.add(date);
+      }
       return next;
     });
   }
