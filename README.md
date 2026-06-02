@@ -17,7 +17,7 @@
 |---|---|---|
 | ![Home Screen](docs/screenshots/home.png) | ![Dishes Screen](docs/screenshots/dishes.png) | ![Grocery Screen](docs/screenshots/grocery.png) |
 
-> Screenshots coming soon. Run locally to see the app in action.
+
 
 ---
 
@@ -58,7 +58,7 @@
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mealplanner.git
+git clone https://github.com/sharanyadevi/mealplanner.git
 cd mealplanner
 npm install
 npm run dev
